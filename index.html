@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Go on a Date with Me?</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff0f5;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            height: 600px;
+        }
+        h1 {
+            color: #ff6699;
+            font-size: 2em;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .yes-button {
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-bottom: 300px;
+            transition: all 0.3s ease;
+        }
+        .no-button {
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 50px;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff6699;
+        }
+        #noButton {
+            position: absolute;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ff6699;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="image-container">
+            <img src="image1.gif" alt="Initial Image" id="initialImage">
+            <img src="image7.gif" alt="New Image" id="newImage" style="display: none;">
+        </div>
+        <h1>Will You Go on a Date with Me?</h1>
+        <div class="buttons">
+            <button class="button yes-button" id="yesButton">Yes</button>
+            <button class="button no-button" id="noButton">No</button>
+        </div>
+        <div class="message" id="message">Let's meet in the future! ❤️</div>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        yesButton.addEventListener('click', () => {
+            window.location.href = 'success.html'; // Redirects to the success page
+        });
+    </script>
+</body>
+</html>
